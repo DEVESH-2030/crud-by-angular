@@ -1,0 +1,46 @@
+{
+  "userList": [
+    {
+      "name": "Dev dsfsf",
+      "email": "dev@gmail.com",
+      "mobile": "7865342342",
+      "gender": "male",
+      "address": "xyz address",
+      "id": 2
+    },
+    {
+      "name": "Reena",
+      "email": "reena@gmail.com",
+      "mobile": "6758984532",
+      "gender": "female",
+      "address": "Unknown address data",
+      "id": 3
+    },
+    {
+      "name": "Raju",
+      "email": "raju@gmail.com",
+      "mobile": "4532456789",
+      "gender": "male",
+      "address": "Non",
+      "id": 4
+    },
+    {
+      "name": "dslkfsf fdgdg",
+      "email": "afsa@gmail.com",
+      "mobile": "4567892455",
+      "gender": "female",
+      "address": "sdlkfjs f",
+      "id": 9
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

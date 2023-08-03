@@ -1,0 +1,28 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+table { width: 100%}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100px;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+/* tr, th {
+  width: 25%;
+  height: 20%;
+} */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+mat-progress-bar {
+  background-color:#f44336;
+}

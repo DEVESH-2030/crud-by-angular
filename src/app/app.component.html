@@ -1,0 +1,94 @@
+  <mat-progress-bar class="progress_bar" mode="indeterminate"></mat-progress-bar>
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Angular Application</span>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+
+  <!-- main section -->
+  <div class="container">
+    <div style="margin-top: 10px;">
+
+      <button mat-raised-button color="accent" (click)="openDialog()">Add User</button> <br> <br>
+      <!-- filter -->
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Enter the text..." #input>
+      </mat-form-field>
+
+      <!-- list data -->
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+          <!-- ID Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+            <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+          </ng-container>
+
+          <!-- Email Column -->
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+            <td mat-cell *matCellDef="let row"> {{row.email}}% </td>
+          </ng-container>
+
+
+          <!-- Mobile Column -->
+          <ng-container matColumnDef="mobile">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Mobile </th>
+            <td mat-cell *matCellDef="let row"> {{row.mobile}} </td>
+          </ng-container>
+
+          <!-- Gender Column -->
+          <ng-container matColumnDef="gender">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Gender </th>
+            <td mat-cell *matCellDef="let row"> {{row.gender}} </td>
+          </ng-container>
+
+          <!-- Address Column -->
+          <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
+            <td mat-cell *matCellDef="let row"> {{row.address}} </td>
+          </ng-container>
+
+          <!-- Action Column -->
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+            <td mat-cell *matCellDef="let row">
+              <button mat-mini-fab color="primary" (click)="updateUser(row)" aria-label="Example icon button with a plus one icon" #tooltip="matTooltip" matTooltip="Edit button" matTooltipPosition="right">
+                <mat-icon>edit</mat-icon>
+              </button>
+              &nbsp;
+              <button mat-mini-fab color="warn" (click)="deleteUser(row.id)" (click)="openSnackBar(message)" aria-label="Example icon button with a delete icon" #tooltip="matTooltip" matTooltip="Delete button" matTooltipPosition="right">
+                <mat-icon>delete</mat-icon>
+              </button>
+              &nbsp;
+              <!-- <button mat-mini-fab color="warn" (click)="deleteUser(row.id)" aria-label="Example icon button with a restore icon" #tooltip="matTooltip" matTooltip="Restore button" matTooltipPosition="right">
+                <mat-icon>restore</mat-icon>
+              </button> -->
+
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" style="text-align: center; color: rgb(124, 124, 124);" colspan="7">No data matching the filter "{{input.value}}"</td>
+          </tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+      </div>
+    </div>
+
+  </div>
