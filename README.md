@@ -1,3 +1,20 @@
+# Screenshot:
+
+  `Get All`
+  ![Alt text](image.png)
+
+  `Add User`
+
+  ![Alt text](image-1.png)
+
+  `Updated User`
+
+  ![Alt text](image-2.png)
+
+  `Json Server to manage data`
+  ![Alt text](image-3.png)
+
+  ![Alt text](image-4.png)
 # AngularProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
